@@ -10,8 +10,8 @@ export class PrinterController {
     this.clientDownloader = clientDownloader
   }
 
-  handle (request: httpRequest): httpResponse {
-    const responseCrawler = this.crawler.print(request.body)
+  async handle (request: httpRequest): Promise<httpResponse> {
+    const responseCrawler = await this.crawler.print(request.body)
     if (responseCrawler.isError) {
       return internalError(new Error('There was an internal error, we apologize'))
     }
