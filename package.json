@@ -4,7 +4,8 @@
   "description": "A simple API for printing the website and downloading it as an image",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --watch",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --watch --detectOpenHandles",
+    "test:verbose": "jest --passWithNoTests --runInBand",
     "test:staged": "jest --passWithNoTests --silent --noStackTrace --runInBand"
   },
   "author": "Muriel Gasparini",
@@ -27,5 +28,8 @@
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/puppeteer": "^5.4.0",
+    "puppeteer": "^5.4.1"
+  }
 }

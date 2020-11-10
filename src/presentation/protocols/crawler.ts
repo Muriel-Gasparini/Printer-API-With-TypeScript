@@ -4,5 +4,5 @@ export interface responseCrawler {
 }
 
 export interface Crawler{
-  print: (url: string) => responseCrawler
+  print: (url: string) => Promise<responseCrawler>
 }
