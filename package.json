@@ -4,7 +4,8 @@
   "description": "A simple API for printing the website and downloading it as an image",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:staged": "npm test -- --findRelatedTests"
   },
   "author": "Muriel Gasparini",
   "license": "ISC",
