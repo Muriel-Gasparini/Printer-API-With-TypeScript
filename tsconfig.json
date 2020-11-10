@@ -7,7 +7,6 @@
     "allowJs": true
   },
   "include": ["src/**/*"],
-  "exclude": ["./dist"],
   "modules": [
     "ts-node"
   ]
