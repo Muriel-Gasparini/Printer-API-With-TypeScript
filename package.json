@@ -4,7 +4,7 @@
   "description": "A simple API for printing the website and downloading it as an image",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand"
   },
   "author": "Muriel Gasparini",
   "license": "ISC",
