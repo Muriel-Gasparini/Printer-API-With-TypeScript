@@ -9,7 +9,13 @@ export class PrinterController {
   }
 
   handle (request: httpRequest): httpResponse {
-    this.crawler.print(request.body)
+    const responseCrawler = this.crawler.print(request.body)
+    if (responseCrawler.isError) {
+      return {
+        status: 500,
+        body: new Error('There was an internal error, we apologize')
+      }
+    }
     return {
       status: 200
     }
