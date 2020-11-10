@@ -47,4 +47,14 @@ describe('PrinterController', () => {
     expect(httpResponse).toEqual({ status: 200 })
     expect(crawlerSpy).toHaveBeenCalledWith(httpRequest.body)
   })
+
+  test('Make sure to throw error if the crawler throws error', () => {
+    const { sut, crawler } = makeSut()
+    jest.spyOn(crawler, 'print').mockReturnValueOnce({ message: 'error_message', isError: true })
+    const httpRequest = {
+      body: 'https://any_site.com'
+    }
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse).toEqual({ status: 500, body: new Error('There was an internal error, we apologize') })
+  })
 })
