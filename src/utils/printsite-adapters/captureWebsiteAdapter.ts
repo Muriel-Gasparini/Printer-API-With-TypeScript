@@ -1,0 +1,16 @@
+import { Crawler, responseCrawler } from '../../presentation/protocols/crawler'
+import captureWebsite from 'capture-website'
+
+export class CaptureWebsiteAdapter implements Crawler {
+  async print (url: string): Promise<responseCrawler> {
+    try {
+      await captureWebsite.file(url, 'screenshot.png')
+      return await new Promise(resolve => resolve({
+        message: 'success_message',
+        isError: false
+      }))
+    } catch (error) {
+      return await new Promise((resolve, reject) => reject({ message: 'error_message', isError: true }))
+    }
+  }
+}
