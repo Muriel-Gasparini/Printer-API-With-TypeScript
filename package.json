@@ -4,7 +4,7 @@
   "description": "A simple API for printing the website and downloading it as an image",
   "main": "dist/src/main/server.js",
   "scripts": {
-    "start": "tsc && node dist/main/server.js",
+    "start": "node dist/main/server.js",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --watch --detectOpenHandles",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:staged": "jest --passWithNoTests --silent --noStackTrace --runInBand"
